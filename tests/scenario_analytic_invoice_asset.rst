@@ -3,10 +3,7 @@ Analytic Invoice Asset Scenario
 ===============================
 
 Imports::
-    >>> import datetime
-    >>> from dateutil.relativedelta import relativedelta
     >>> from decimal import Decimal
-    >>> from operator import attrgetter
     >>> from proteus import config, Model, Wizard
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
@@ -14,7 +11,6 @@ Imports::
     ...     create_chart, get_accounts
     >>> from.trytond.modules.account_invoice.tests.tools import \
     ...     set_fiscalyear_invoice_sequences, create_payment_term
-    >>> today = datetime.date.today()
 
 Create database::
 
