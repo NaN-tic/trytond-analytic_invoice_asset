@@ -11,19 +11,12 @@ Imports::
     ...     create_chart, get_accounts
     >>> from.trytond.modules.account_invoice.tests.tools import \
     ...     set_fiscalyear_invoice_sequences, create_payment_term
+    >>> from trytond.tests.tools import activate_modules
 
-Create database::
-
-    >>> config = config.set_trytond()
-    >>> config.pool.test = True
 
 Install account_invoice::
 
-    >>> Module = Model.get('ir.module')
-    >>> analytic_invoice_module, = Module.find(
-    ...     [('name', '=', 'analytic_invoice_asset')])
-    >>> analytic_invoice_module.click('install')
-    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
+    >>> config = activate_modules('analytic_invoice_asset')
 
 Create company::
 
