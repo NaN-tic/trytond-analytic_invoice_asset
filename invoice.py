@@ -6,9 +6,8 @@ from trytond.pool import PoolMeta, Pool
 __all__ = ['InvoiceLine']
 
 
-class InvoiceLine:
+class InvoiceLine(metaclass=PoolMeta):
     __name__ = 'account.invoice.line'
-    __metaclass__ = PoolMeta
 
     @fields.depends('invoice_asset', 'analytic_accounts')
     def on_change_invoice_asset(self):
