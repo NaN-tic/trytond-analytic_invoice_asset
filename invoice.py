@@ -17,6 +17,5 @@ class InvoiceLine(metaclass=PoolMeta):
             entries = []
             for entry in self.invoice_asset.analytic_accounts:
                 new_entry = Entry(root=entry.root, account=entry.account)
-                new_entry.required = new_entry.on_change_with_required()
                 entries.append(new_entry)
             self.analytic_accounts = entries

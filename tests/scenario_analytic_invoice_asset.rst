@@ -44,8 +44,7 @@ Create analytic accounts::
     >>> analytic_account = AnalyticAccount(root=root, parent=root,
     ...     name='Analytic')
     >>> analytic_account.save()
-    >>> mandatory_root = AnalyticAccount(type='root', name='Root',
-    ...     mandatory=True)
+    >>> mandatory_root = AnalyticAccount(type='root', name='Root')
     >>> mandatory_root.save()
     >>> mandatory_analytic_account = AnalyticAccount(root=mandatory_root,
     ...     parent=mandatory_root, name='Mandatory Analytic')
@@ -105,13 +104,9 @@ Create invoice with analytic accounts::
     >>> entry, mandatory_entry = line.analytic_accounts
     >>> entry.root == root
     True
-    >>> bool(entry.required)
-    False
     >>> entry.account == analytic_account
     True
     >>> mandatory_entry.root == mandatory_root
-    True
-    >>> bool(mandatory_entry.required)
     True
     >>> mandatory_entry.account == mandatory_analytic_account
     True
