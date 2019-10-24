@@ -69,8 +69,6 @@ Create product::
     >>> template.type = 'service'
     >>> template.list_price = Decimal('40')
     >>> template.cost_price = Decimal('25')
-    >>> template.account_expense = expense
-    >>> template.account_revenue = revenue
     >>> template.save()
     >>> product.template = template
     >>> product.save()
@@ -85,7 +83,6 @@ Create an asset::
     >>> Asset = Model.get('asset')
     >>> asset = Asset()
     >>> asset.name = 'Asset'
-    >>> asset.owner = party
     >>> entry, mandatory_entry = asset.analytic_accounts
     >>> entry.root = root
     >>> entry.account = analytic_account
