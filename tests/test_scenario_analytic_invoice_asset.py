@@ -90,7 +90,7 @@ class Test(unittest.TestCase):
 
         # Create invoice with analytic accounts
         Invoice = Model.get('account.invoice')
-        invoice = Invoice()
+        invoice = Invoice(type='out')
         invoice.party = party
         invoice.payment_term = payment_term
         line = invoice.lines.new()
